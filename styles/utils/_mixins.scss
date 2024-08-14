@@ -1,0 +1,56 @@
+// ++++++++++++++++++++++++++++++++++ Responsives +++++++++++++++++++++++++++++++++++++++//
+// ======================================== Max
+@mixin maxMobile__669 {
+    @media only screen and (max-width: 669px) {
+        @content;
+    } 
+}
+
+@mixin maxTablet__839 {
+    @media only screen and (max-width: 839px) {
+        @content;
+    }
+}
+
+@mixin maxBigTablet__1199 {
+    @media only screen and (max-width: 1199px) {
+        @content;
+    } 
+}
+
+@mixin maxLaptop__1439 {
+    @media only screen and (max-width: 1439px) {
+        @content;
+    } 
+}
+
+@mixin maxDesktop__2039 {
+    @media only screen and (max-width: 2039px) {
+        @content;
+    } 
+}
+
+// ========================================  Min And Max
+@mixin minAndMaxTablet__670_839 {
+    @media (min-width: 670px) and (max-width: 839px) {
+        @content;
+    }
+}
+
+@mixin minAndMaxBigTablet__840_1199 {
+    @media (min-width: 840px) and (max-width: 1199px) {
+        @content;
+    } 
+}
+
+@mixin minAndMaxLaptop__1200_1439 {
+    @media (min-width: 1200px) and (max-width: 1439px) {
+        @content;
+    } 
+}
+
+@mixin minAndMaxDesktop__1440_2039 {
+    @media (min-width: 1440px) and (max-width: 2039px) {
+        @content;
+    } 
+}
