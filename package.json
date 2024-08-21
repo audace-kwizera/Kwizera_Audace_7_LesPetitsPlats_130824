@@ -1,0 +1,14 @@
+{
+  "name": "kwizera_audace_7_lespetitsplats_130824",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./styles/styles.scss ./styles/styles.css"
+  },
+  "author": "Audace",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.77.8"
+  }
+}

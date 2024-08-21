@@ -1,48 +1,56 @@
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
 * {
-  margin: 0; }
+  margin: 0;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background: #E5E5E5; }
+  background: #E5E5E5;
+}
 
 h1 {
-  font-family: 'Anton', Arial, Helvetica, sans-serif;
+  font-family: "Anton", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 45px;
-  line-height: 66px; }
+  line-height: 66px;
+}
 
 h2 {
-  font-family: 'Anton', Arial, Helvetica, sans-serif;
+  font-family: "Anton", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 25px;
-  line-height: 31px; }
+  line-height: 31px;
+}
 
 h3 {
-  font-family: 'Anton', Arial, Helvetica, sans-serif;
+  font-family: "Anton", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 27px; }
+  line-height: 27px;
+}
 
 h4 {
-  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 12px;
-  line-height: 16px; }
+  line-height: 16px;
+}
 
 p {
-  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 19px; }
+  line-height: 19px;
+}
 
 .logo {
   height: 50px;
-  font-family: 'Anton', Arial, Helvetica, sans-serif;
+  font-family: "Anton", Arial, Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
@@ -54,21 +62,25 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  padding: 5rem; }
+  padding: 5rem;
+}
 
 .card {
   border-radius: 25px;
   width: 100%;
   background-color: #ffffff;
-  height: 800px; }
-  .card img {
-    width: 100%;
-    border-radius: 25px 25px 0 0;
-    height: 30%;
-    object-fit: cover; }
-  .card__description {
-    padding: 1rem;
-    height: 70%; }
+  height: 800px;
+}
+.card img {
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+  height: 30%;
+  object-fit: cover;
+}
+.card__description {
+  padding: 1rem;
+  height: 70%;
+}
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
@@ -76,17 +88,20 @@ p {
 /*============================================== Color =============================================*/
 .container__drop__down__menu {
   position: relative;
-  display: inline-block; }
-  .container__drop__down__menu__search {
-    position: relative;
-    padding: 8px; }
-  .container__drop__down__menu__content {
-    display: none;
-    position: absolute;
-    background-color: #FFFFFF;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1; }
+  display: inline-block;
+}
+.container__drop__down__menu__search {
+  position: relative;
+  padding: 8px;
+}
+.container__drop__down__menu__content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 
 .drop__down__button {
   background-color: #FFFFFF;
@@ -98,10 +113,12 @@ p {
   border: none;
   cursor: pointer;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .drop__down__button:hover, .drop__down__button:focus {
-  background-color: #FFD15B; }
+  background-color: #FFD15B;
+}
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
@@ -112,12 +129,12 @@ p {
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
 .cover {
-  width: 100vw;
   height: 50vh;
   background-image: url("../../assets/cover/cover.jpeg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+}
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
