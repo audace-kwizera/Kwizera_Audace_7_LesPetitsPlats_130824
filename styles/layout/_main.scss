@@ -1,3 +1,12 @@
-@import '../utils/functions';
-@import '../utils/mixins';
-@import '../utils/variables';
+@import "../utils/functions";
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.cover {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("../../assets/cover/cover.jpeg"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}

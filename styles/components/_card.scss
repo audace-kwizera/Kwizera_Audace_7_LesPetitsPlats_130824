@@ -1,3 +1,31 @@
-@import '../utils/functions';
-@import '../utils/mixins';
-@import '../utils/variables';
+@import "../utils/functions";
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.container {
+  &__main {
+    &__card {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      padding: 5rem;
+    }
+  }
+}
+
+.card {
+  border-radius: 25px;
+  width: 100%;
+  background-color: #ffffff;
+  height: 800px;
+  img {
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+    height: 30%;
+    object-fit: cover;
+  }
+  &__description {
+    padding: 1rem;
+    height: 70%;
+  }
+}

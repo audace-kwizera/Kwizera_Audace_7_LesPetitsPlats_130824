@@ -1,3 +1,47 @@
-@import '../utils/functions';
-@import '../utils/mixins';
-@import '../utils/variables';
+@import "../utils/functions";
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.container {
+  &__drop {
+    &__down {
+      &__menu {
+        position: relative;
+        display: inline-block;
+        &__search {
+          position: relative;
+          padding: 8px;
+        }
+        &__content {
+          display: none;
+          position: absolute;
+          background-color: #FFFFFF;
+          min-width: 200px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.drop {
+  &__down {
+    &__button {
+      background-color: #FFFFFF;
+      color: #1b1b1b;
+      padding: 1rem;
+      width: 250px;
+      border-radius: 15px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.drop__down__button:hover, .drop__down__button:focus {
+    background-color: #FFD15B;
+}
