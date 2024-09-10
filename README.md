@@ -7,3 +7,7 @@ searchbar : div background blanc avec un input et bouton
 
 
 - faire l'integration
+
+
+///////////////////////////////////
+-terminer le filtre selon les appareils et les ustensils à l'image des ingredients
