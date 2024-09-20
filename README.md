@@ -11,3 +11,21 @@ searchbar : div background blanc avec un input et bouton
 
 ///////////////////////////////////
 -terminer le filtre selon les appareils et les ustensils à l'image des ingredients
+
+
+////// Syntaxe => En tant que / Je veux / Pour
+User Story ==> description des fonctionnalité sur un projet
+
+Au clic rendre actif l'ingredient dans l'array (appliquer un bg et ajouter class par ex: li class="selective")
+
+En tant qu'user quand je clique sur combo box ingredient une liste d'ingredients s'affiche.
+En tant qu'user quand je clique sur un ingredient qui est dans la liste d'ingredient celui ci est marqué et une croix apparait pour  supprimer la selection
+
+En tant qu'user quand je clique sur combo box ingredient une liste d'ingredients s'affiche.
+En tant qu'user quand je clique sur un ingredient qui est dans la liste d'ingredient la liste des recette recette est mise à jour en fonction de l'ingredient selectionné
+
+En tant qu'user quand je clique sur combo box ingredient une liste d'ingredients s'affiche.
+En tant qu'user quand je clique sur un ingredient qui est dans la liste d'ingredient la liste des recette recette est mise à jour en fonction de l'ingredient selectionné
+
+///////////////////////////////////
+- terminer les dropdown 

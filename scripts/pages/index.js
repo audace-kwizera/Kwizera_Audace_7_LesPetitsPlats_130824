@@ -19,17 +19,16 @@ const ingredients = recipes.flatMap(function (recipe) {
 
 const appliance = recipes.flatMap(function (i) {
   return i.appliance;
-}) 
+});
 
 const ustensils = recipes.flatMap(function (recipe) {
   return recipe.ustensils;
-})
-
+});
 
 /*============================ Set ===============================*/
 // Elimination des doublons automatiquement grâce à set et mis dans un tableau pour créer un tableau
 const cleanIngredients = [...new Set(ingredients)];
-const cleanAppliance = [...new Set(appliance)]
+const cleanAppliance = [...new Set(appliance)];
 const cleanUstensils = [...new Set(ustensils)];
 
 /*============================ Sort ===============================*/
@@ -38,7 +37,7 @@ cleanIngredients.sort();
 cleanAppliance.sort();
 cleanUstensils.sort();
 
-console.log("cleanAppliance ===> ", cleanAppliance)
+console.log("cleanAppliance ===> ", cleanAppliance);
 console.log("cleanUstensils ==> ", cleanUstensils);
 console.log("cleanIngredients", cleanIngredients);
 
@@ -67,8 +66,6 @@ function filterByIngredient(ingredientArray) {
   return results;
 }
 
-
-
 console.log(
   "Ingredients ====>",
   filterByIngredient([searchIngredient, cleanIngredients[68]])
@@ -77,7 +74,7 @@ console.log(
 // Function pour filtrer les Appareils
 function filterByAppliance(applianceArray) {
   const results = recipes.filter(function (recipe) {
-    return applianceArray.includes(recipe.appliance)
+    return applianceArray.includes(recipe.appliance);
   });
   return results;
 }
@@ -97,8 +94,87 @@ function filterByUstensil(ustensilArray) {
   return results;
 }
 
-
 console.log(
-  "Ustensiles ====>", 
-  filterByUstensil([searchUstensil, cleanUstensils[5]])
+  "Ustensiles ====>",
+  filterByUstensil([searchUstensil, cleanUstensils[4]])
 );
+
+/*========================== Dropdown =============================*/
+let dropdown = document.querySelector(".dropdown__multiselect");
+let menu = document.querySelector(".dropdown__menu");
+let listContainer = document.querySelector(".dropdown__selectedList__container");
+
+let selectedItems = [];
+
+dropdown.onclick = (event) => {
+  if (event.target.classList.contains("dropdown__multiselect") || event.target.classList.contains("dropdown__arrow")) {
+    dropdown.classList.toggle("show");
+  }
+};
+
+menu.addEventListener("click", (event) => {
+  event.preventDefault();
+  let target = event.target;
+  let li = target.closest("li");
+  if (li) {
+    let checkbox = li.querySelector("input[type='checkbox']");
+    let item = checkbox.value;
+
+    checkbox.checked = !checkbox.checked;
+
+    if (checkbox.checked) {
+      if (!selectedItems.includes(item)) {
+        selectedItems.push(item);
+        showSelectedItems(item);
+      }
+    } else {
+      selectedItems = selectedItems.filter((value) => value !== item);
+      removeSelectedItem(item);
+    }
+  }
+});
+
+function showSelectedItems(item) {
+  let itemSpan = document.createElement("span");
+  let crossIcon = document.createElement("i");
+
+  itemSpan.innerHTML = item;
+  itemSpan.classList.add("selectedItem");
+
+  crossIcon.classList.add("fa-solid", "fa-xmark");
+  crossIcon.onclick = deleteItem;
+
+  itemSpan.appendChild(crossIcon);
+  listContainer.appendChild(itemSpan);
+}
+
+function removeSelectedItem(item) {
+  let itemSpans = listContainer.getElementsByClassName("selectedItem");
+  for (let i = 0; i < itemSpans.length; i++) {
+    if (itemSpans[i].textContent.replace('×', '').trim() === item) {
+      itemSpans[i].remove();
+      break;
+    }
+  }
+}
+
+function deleteItem(event) {
+  event.stopPropagation();
+  let itemSpan = event.currentTarget.parentElement;
+  let item = itemSpan.textContent.replace('×', '').trim();
+
+  selectedItems = selectedItems.filter((value) => value !== item);
+
+  itemSpan.classList.add("zoomOut");
+
+  setTimeout(() => {
+    itemSpan.remove();
+    itemSpan.classList.remove("zoomOut");
+  }, 390);
+
+  // Décocher la case correspondante
+  let checkbox = menu.querySelector(`input[value="${item}"]`);
+  if (checkbox) {
+    checkbox.checked = false;
+  }
+}

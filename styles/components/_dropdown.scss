@@ -1,0 +1,124 @@
+@import "../utils/functions";
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.dropdown {
+  &__multiselect {
+    width: 400px;
+    height: 60px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px $color__primary;
+    font-family: sans-serif;
+    cursor: pointer;
+    background: $background__color__second;
+  }
+  &__arrow {
+    position: absolute;
+    right: 1em;
+    top: 75%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  &__menu {
+    list-style-type: none;
+    width: 100%;
+    top: 120%;
+    position: absolute;
+    border-radius: inherit;
+    box-shadow: 0 2px 5px $color__third;
+    height: 0%;
+    transition: height 300ms ease-in-out;
+    cursor: pointer;
+    overflow-y: scroll;
+    background: $background__color__second;
+    li {
+      padding: 1em;
+      transition: background 300ms ease-in;
+      opacity: 0;
+      transition: opacity 400ms ease-in-out;
+      &:hover {
+        background-color: $background__color__tertiairy;
+      }
+    }
+  }
+  &__selectedList {
+    &__container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      border-radius: inherit;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      overflow: auto;
+      padding: 0.5em;
+      &:hover {
+        background-color: $background__color__tertiairy;
+      }
+    }
+  }
+  &__selectedItem {
+    position: relative;
+    border: 2px solid $background__color__tertiairy;
+    padding: 0.1em 0 0.1em 0.75em;
+    height: 35px;
+    border-radius: inherit;
+    margin: 0.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: zoomIn 350ms ease-in-out;
+  }
+  .zoomOut {
+    animation: zoomOut 400ms ease-in-out;
+  }
+}
+
+.show {
+  .dropdown {
+    &__menu {
+      height: 200px;
+      padding: 2rem 0;
+      width: 107%;
+      li {
+        opacity: 1;
+      }
+    }
+    &__selectedList {
+        &__container {
+            background-color: $background__color__tertiairy;
+        }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $background__color__second;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $background__color__tertiairy;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

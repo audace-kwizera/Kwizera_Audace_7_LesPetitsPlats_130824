@@ -1,56 +1,48 @@
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
 * {
-  margin: 0;
-}
+  margin: 0; }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background: #E5E5E5;
-}
+  background: #E5E5E5; }
 
 h1 {
-  font-family: "Anton", Arial, Helvetica, sans-serif;
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 45px;
-  line-height: 66px;
-}
+  line-height: 66px; }
 
 h2 {
-  font-family: "Anton", Arial, Helvetica, sans-serif;
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 25px;
-  line-height: 31px;
-}
+  line-height: 31px; }
 
 h3 {
-  font-family: "Anton", Arial, Helvetica, sans-serif;
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 27px;
-}
+  line-height: 27px; }
 
 h4 {
-  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 12px;
-  line-height: 16px;
-}
+  line-height: 16px; }
 
 p {
-  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
-  line-height: 19px;
-}
+  line-height: 19px; }
 
 .logo {
   height: 50px;
-  font-family: "Anton", Arial, Helvetica, sans-serif;
+  font-family: 'Anton', Arial, Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 25px;
-}
+  font-size: 25px; }
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
@@ -62,25 +54,21 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  padding: 5rem;
-}
+  padding: 5rem; }
 
 .card {
   border-radius: 25px;
   width: 100%;
   background-color: #ffffff;
-  height: 800px;
-}
-.card img {
-  width: 100%;
-  border-radius: 25px 25px 0 0;
-  height: 30%;
-  object-fit: cover;
-}
-.card__description {
-  padding: 1rem;
-  height: 70%;
-}
+  height: 800px; }
+  .card img {
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+    height: 30%;
+    object-fit: cover; }
+  .card__description {
+    padding: 1rem;
+    height: 70%; }
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
@@ -88,20 +76,17 @@ p {
 /*============================================== Color =============================================*/
 .container__drop__down__menu {
   position: relative;
-  display: inline-block;
-}
-.container__drop__down__menu__search {
-  position: relative;
-  padding: 8px;
-}
-.container__drop__down__menu__content {
-  display: none;
-  position: absolute;
-  background-color: #FFFFFF;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
+  display: inline-block; }
+  .container__drop__down__menu__search {
+    position: relative;
+    padding: 8px; }
+  .container__drop__down__menu__content {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1; }
 
 .drop__down__button {
   background-color: #FFFFFF;
@@ -113,13 +98,101 @@ p {
   border: none;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 
 .drop__down__button:hover, .drop__down__button:focus {
-  background-color: #FFD15B;
-}
+  background-color: #FFD15B; }
 
+/*============================================== Background =============================================*/
+/*============================================== Color =============================================*/
+.dropdown__multiselect {
+  width: 400px;
+  height: 60px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #1B1B1B;
+  font-family: sans-serif;
+  cursor: pointer;
+  background: #FFFFFF; }
+.dropdown__arrow {
+  position: absolute;
+  right: 1em;
+  top: 75%;
+  transform: translateY(-50%);
+  z-index: 2; }
+.dropdown__menu {
+  list-style-type: none;
+  width: 100%;
+  top: 120%;
+  position: absolute;
+  border-radius: inherit;
+  box-shadow: 0 2px 5px #FFFFFF;
+  height: 0%;
+  transition: height 300ms ease-in-out;
+  cursor: pointer;
+  overflow-y: scroll;
+  background: #FFFFFF; }
+  .dropdown__menu li {
+    padding: 1em;
+    transition: background 300ms ease-in;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out; }
+    .dropdown__menu li:hover {
+      background-color: #FFD15B; }
+.dropdown__selectedList__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: auto;
+  padding: 0.5em; }
+  .dropdown__selectedList__container:hover {
+    background-color: #FFD15B; }
+.dropdown__selectedItem {
+  position: relative;
+  border: 2px solid #FFD15B;
+  padding: 0.1em 0 0.1em 0.75em;
+  height: 35px;
+  border-radius: inherit;
+  margin: 0.25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: zoomIn 350ms ease-in-out; }
+.dropdown .zoomOut {
+  animation: zoomOut 400ms ease-in-out; }
+
+.show .dropdown__menu {
+  height: 200px;
+  padding: 2rem 0;
+  width: 107%; }
+  .show .dropdown__menu li {
+    opacity: 1; }
+.show .dropdown__selectedList__container {
+  background-color: #FFD15B; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+::-webkit-scrollbar-track {
+  background-color: #FFFFFF; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #FFD15B; }
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+@keyframes zoomOut {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0); } }
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
 /*============================================== Background =============================================*/
@@ -133,8 +206,7 @@ p {
   background-image: url("../../assets/cover/cover.jpeg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/

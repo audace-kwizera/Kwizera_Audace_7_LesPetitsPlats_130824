@@ -1,777 +1,615 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link href="/styles/styles.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <title>Les Petits Plats</title>
-  </head>
 
-  <body>
-    <header class="cover">
-      <div class="logo link__home__img">
-        <a href="./index.html">
-          <img src="assets/logo/logo.svg" class="logo" alt="fisheye logo" />
-        </a>
+<head>
+  <link href="/styles/styles.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+  <title>Les Petits Plats</title>
+</head>
+
+<body>
+  <header class="cover">
+    <div class="logo link__home__img">
+      <a href="./index.html">
+        <img src="assets/logo/logo.svg" class="logo" alt="fisheye logo" />
+      </a>
+    </div>
+    <!-- Cover -->
+    <section>
+      <!-- Slogan -->
+      <div class="container container__slogan">
+        <h1 class="slogan">
+          CHERCHEZ PARMI PLUS DE 1500 RECETTES<br />
+          DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
+        </h1>
       </div>
-      <!-- Cover -->
-      <section>
-        <!-- Slogan -->
-        <div class="container container__slogan">
-          <h1 class="slogan">
-            CHERCHEZ PARMI PLUS DE 1500 RECETTES<br />
-            DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
-          </h1>
-        </div>
+      <!-- Search bar -->
+      <div class="container container__serchbar">
         <!-- Search bar -->
-        <div class="container container__serchbar">
-          <!-- Search bar -->
-        </div>
-      </section>
-    </header>
+      </div>
+    </section>
+  </header>
 
-    <main id="main">
-      <!-- Nav -->
-      <section class="container container__nav">
-        <!-- Menu -->
-        <div class="container container__nav__menu">
-          <!-- Drop Down 1 -->
-          <div
-            class="container container__drop__down__menu container__ingredient"
-          >
-            <!-- Button -->
-            <button class="drop__down__button">
-              Ingredients<span>&#x25BC;</span>
-            </button>
-            <!-- Drop Down -->
-            <div class="container container__drop__down__menu__content">
-              <!-- Search -->
-              <div class="container container__drop__down__menu__search">
-                <input
-                  type="text"
-                  name="ingredients"
-                  class="drop__down__search"
-                  placeholder="&times;"
-                />
-              </div>
-              <!-- Link -->
-              <a href="#">Jus de citron</a>
-              <a href="#">Glaçon</a>
-              <a href="#">Tomates</a>
-            </div>
-          </div>
-          <!-- Drop Down 2 -->
-          <div
-            class="container container__drop__down__menu container__ingredient"
-          >
-            <!-- Button -->
-            <button class="drop__down__button">
-              Appareils<span>&#x25BC;</span>
-            </button>
-            <!-- Drop Down -->
-            <div class="container container__drop__down__menu__content">
-              <!-- Search -->
-              <div class="container container__drop__down__menu__search">
-                <input
-                  type="text"
-                  name="appareil"
-                  class="drop__down__search"
-                  placeholder="&times;"
-                />
-              </div>
-              <!-- Link -->
-              <a href="#">Jus de citron</a>
-              <a href="#">Glaçon</a>
-              <a href="#">Tomates</a>
-            </div>
-          </div>
-          <!-- Drop Down 3 -->
-          <div
-            class="container container__drop__down__menu container__ingredient"
-          >
-            <!-- Button -->
-            <button class="drop__down__button">
-              Ustensiles<span>&#x25BC;</span>
-            </button>
-            <!-- Drop Down -->
-            <div class="container container__drop__down__menu__content">
-              <!-- Search -->
-              <div class="container container__drop__down__menu__search">
-                <input
-                  type="text"
-                  name="ustensile"
-                  class="drop__down__search"
-                  placeholder="&times;"
-                />
-              </div>
-              <!-- Link -->
-              <a href="#">Jus de citron</a>
-              <a href="#">Glaçon</a>
-              <a href="#">Tomates</a>
-            </div>
-          </div>
-        </div>
-        <!-- Titre -->
-        <div class="container container__nav__title"></div>
-      </section>
+  <main id="main">
+    <!-- Nav -->
+    <section class="container container__nav">
+      <!-- Menu -->
+      <div class="container container__nav__menu">
+        <!-- Drop Down 1 -->
+        <div class="container container__drop__down__menu container__ingredient">
 
-      <!-- Main -->
-      <section class="container container__main">
-        <!-- Card Container -->
-        <div class="container container__main__card" id="cardContainer">
-          <!-- Card 1 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 2 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 3 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 4 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 5 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 6 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 7 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 8 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 9 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-          <!-- Card 10 -->
-          <figure class="card">
-            <img
-              src="./assets/images/Recette01.jpg"
-              alt="Image de Limonade de Coco"
-            />
-            <figcaption class="card__description">
-              <h3>Limonade de Coco</h3>
-              <!-- Recette -->
-              <div class="container__main__card__description container">
-                <h4>RECETTE</h4>
-                <p>
-                  Mettre les glaçons à votre goût dans le blender, Ajouter le
-                  lait la crème de coco, le jus de 2 citrons et le sucre
-                  ensemble. Mixer jusqu'à obtenir la consistance désirée.
-                </p>
-              </div>
-              <!-- Ingredients -->
-              <div class="container__main__card__description container">
-                <h4>INGREDIENTS</h4>
-                <!-- Ingredients -->
-                <div
-                  class="container__main__card__description__ingredient container"
-                >
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Lait de Coco</p>
-                    <p>400ml</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Jus de citron</p>
-                    <p>2</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Créme de coco</p>
-                    <p>4 cuillères</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Sucre</p>
-                    <p>20g</p>
-                  </div>
-                  <div
-                    class="container__main__card__description__ingredient__item container"
-                  >
-                    <p>Glaçons</p>
-                    <p>2</p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
+          <button class="drop__down__button">
+            Ingredients<span>&#x25BC;</span>
+
+          </button>
+          <!-- Drop Down -->
+          <div class="dropdown__multiselect">
+            <!-- Button -->
+            <div>
+              Ingredients <span class=dropdown__arrow>&blacktriangledown;</span>
+            </div>
+            <!-- Selection -->
+            <div class="dropdown__selectedList__container"></div>
+            <!-- List -->
+            <ul class="dropdown__menu">
+              <li class="dropdown__menu__task">
+                <input type="text" id="searchBar" placeholder="Rechercher..." />
+              </li>
+              <li>
+                <input type="checkbox" name="" id="task1" value="Jus de citron" />
+                <span><a href="#">Jus de citron</a></span>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="task2" value="Glaçon" />
+                <span><span><a href="#">Glaçon</a></span></span>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="task3" value="Tomates" />
+                <span><span><a href="#">Tomates</a></span></span>
+              </li>
+            </ul>
+          </div>
         </div>
-      </section>
-    </main>
-    <script src="./recipes.js"></script>
-    <script src="./scripts/utils/functions.js"></script>
-    <script src="./scripts/templates/searchbar.js"></script>
-    <script src="./scripts/templates/card.js"></script>
-    <script src="./scripts/templates/menu.js"></script>
-    <script src="./scripts/pages/index.js"></script>
-  </body>
+
+        <div class="container container__drop__down__menu__content">
+          <!-- Search -->
+          <div class="container container__drop__down__menu__search">
+            <input type="text" name="ingredients" class="drop__down__search" placeholder="&times;" />
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <!-- Drop Down 2 -->
+      <div class="container container__drop__down__menu container__ingredient">
+        <!-- Button -->
+        <button class="drop__down__button">
+          Appareils<span>&#x25BC;</span>
+        </button>
+        <!-- Drop Down -->
+        <div class="container container__drop__down__menu__content">
+          <!-- Search -->
+          <div class="container container__drop__down__menu__search">
+            <input type="text" name="appareil" class="drop__down__search" placeholder="&times;" />
+          </div>
+          <!-- Link -->
+          <a href="#">Jus de citron</a>
+          <a href="#">Glaçon</a>
+          <a href="#">Tomates</a>
+        </div>
+      </div>
+      <!-- Drop Down 3 -->
+      <div class="container container__drop__down__menu container__ingredient">
+        <!-- Button -->
+        <button class="drop__down__button">
+          Ustensiles<span>&#x25BC;</span>
+        </button>
+        <!-- Drop Down -->
+        <div class="container container__drop__down__menu__content">
+          <!-- Search -->
+          <div class="container container__drop__down__menu__search">
+            <input type="text" name="ustensile" class="drop__down__search" placeholder="&times;" />
+          </div>
+          <!-- Link -->
+          <a href="#">Jus de citron</a>
+          <a href="#">Glaçon</a>
+          <a href="#">Tomates</a>
+        </div>
+      </div>
+      </div>
+      <!-- Titre -->
+      <div class="container container__nav__title"></div>
+    </section>
+
+    <!-- Main -->
+    <section class="container container__main">
+      <!-- Card Container -->
+      <div class="container container__main__card" id="cardContainer">
+        <!-- Card 1 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 2 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 3 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 4 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 5 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 6 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 7 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 8 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 9 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Card 10 -->
+        <figure class="card">
+          <img src="./assets/images/Recette01.jpg" alt="Image de Limonade de Coco" />
+          <figcaption class="card__description">
+            <h3>Limonade de Coco</h3>
+            <!-- Recette -->
+            <div class="container__main__card__description container">
+              <h4>RECETTE</h4>
+              <p>
+                Mettre les glaçons à votre goût dans le blender, Ajouter le
+                lait la crème de coco, le jus de 2 citrons et le sucre
+                ensemble. Mixer jusqu'à obtenir la consistance désirée.
+              </p>
+            </div>
+            <!-- Ingredients -->
+            <div class="container__main__card__description container">
+              <h4>INGREDIENTS</h4>
+              <!-- Ingredients -->
+              <div class="container__main__card__description__ingredient container">
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Lait de Coco</p>
+                  <p>400ml</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Jus de citron</p>
+                  <p>2</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Créme de coco</p>
+                  <p>4 cuillères</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Sucre</p>
+                  <p>20g</p>
+                </div>
+                <div class="container__main__card__description__ingredient__item container">
+                  <p>Glaçons</p>
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <script src="./recipes.js"></script>
+  <script src="./scripts/utils/functions.js"></script>
+  <script src="./scripts/templates/searchbar.js"></script>
+  <script src="./scripts/templates/card.js"></script>
+  <script src="./scripts/templates/menu.js"></script>
+  <script src="./scripts/pages/index.js"></script>
+</body>
+
 </html>
