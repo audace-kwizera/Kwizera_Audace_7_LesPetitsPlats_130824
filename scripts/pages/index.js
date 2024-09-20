@@ -99,14 +99,30 @@ console.log(
   filterByUstensil([searchUstensil, cleanUstensils[4]])
 );
 
+function initDropdownIngredient() {
+  const ulElement = document.getElementById("ingredient-list");
+  ulElement.innerHTML = '';
+  cleanIngredients.forEach(function (ingredient) {
+    const liElement = document.createElement("li");
+    liElement.textContent = ingredient;
+    ulElement.append(liElement);
+  });
+}
+initDropdownIngredient();
+
 /*========================== Dropdown =============================*/
-document.querySelectorAll(".dropdown__multiselect").forEach(dropdown => {
+document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
   let menu = dropdown.querySelector(".dropdown__menu");
-  let listContainer = dropdown.querySelector(".dropdown__selectedList__container");
+  let listContainer = dropdown.querySelector(
+    ".dropdown__selectedList__container"
+  );
   let selectedItems = [];
 
   dropdown.addEventListener("click", (event) => {
-    if (event.target.classList.contains("dropdown__multiselect") || event.target.classList.contains("dropdown__arrow")) {
+    if (
+      event.target.classList.contains("dropdown__multiselect") ||
+      event.target.classList.contains("dropdown__arrow")
+    ) {
       dropdown.classList.toggle("show");
     }
   });
@@ -142,7 +158,8 @@ function showSelectedItems(item, listContainer, selectedItems, menu) {
   itemSpan.classList.add("selectedItem");
 
   crossIcon.classList.add("fa-solid", "fa-xmark");
-  crossIcon.onclick = (event) => deleteItem(event, listContainer, selectedItems, menu);
+  crossIcon.onclick = (event) =>
+    deleteItem(event, listContainer, selectedItems, menu);
 
   itemSpan.appendChild(crossIcon);
   listContainer.appendChild(itemSpan);
@@ -151,7 +168,7 @@ function showSelectedItems(item, listContainer, selectedItems, menu) {
 function removeSelectedItem(item, listContainer) {
   let itemSpans = listContainer.getElementsByClassName("selectedItem");
   for (let i = 0; i < itemSpans.length; i++) {
-    if (itemSpans[i].textContent.replace('×', '').trim() === item) {
+    if (itemSpans[i].textContent.replace("×", "").trim() === item) {
       itemSpans[i].remove();
       break;
     }
@@ -161,7 +178,7 @@ function removeSelectedItem(item, listContainer) {
 function deleteItem(event, listContainer, selectedItems, menu) {
   event.stopPropagation();
   let itemSpan = event.currentTarget.parentElement;
-  let item = itemSpan.textContent.replace('×', '').trim();
+  let item = itemSpan.textContent.replace("×", "").trim();
 
   selectedItems = selectedItems.filter((value) => value !== item);
 
@@ -178,4 +195,3 @@ function deleteItem(event, listContainer, selectedItems, menu) {
     checkbox.checked = false;
   }
 }
-
