@@ -42,10 +42,7 @@
         <!-- Drop Down 1 -->
         <div class="container container__drop__down__menu container__ingredient">
 
-          <button class="drop__down__button">
-            Ingredients<span>&#x25BC;</span>
 
-          </button>
           <!-- Drop Down -->
           <div class="dropdown__multiselect">
             <!-- Button -->
@@ -88,40 +85,38 @@
       </div>
       <!-- Drop Down 2 -->
       <div class="container container__drop__down__menu container__ingredient">
-        <!-- Button -->
-        <button class="drop__down__button">
-          Appareils<span>&#x25BC;</span>
-        </button>
-        <!-- Drop Down -->
-        <div class="container container__drop__down__menu__content">
-          <!-- Search -->
-          <div class="container container__drop__down__menu__search">
-            <input type="text" name="appareil" class="drop__down__search" placeholder="&times;" />
+        <!-- Drop Down 2 -->
+        <div class="dropdown__multiselect">
+          <!-- Button -->
+          <div>
+            Appareils <span class="dropdown__arrow">&blacktriangledown;</span>
           </div>
-          <!-- Link -->
-          <a href="#">Jus de citron</a>
-          <a href="#">Glaçon</a>
-          <a href="#">Tomates</a>
+          <!-- Selection -->
+          <div class="dropdown__selectedList__container"></div>
+          <!-- List -->
+          <ul class="dropdown__menu">
+            <li class="dropdown__menu__task">
+              <input type="text" class="searchBar" placeholder="Rechercher..." />
+            </li>
+            <li>
+              <input type="checkbox" name="" id="task4" value="Blender" />
+              <span><a href="#">Blender</a></span>
+            </li>
+            <li>
+              <input type="checkbox" name="" id="task5" value="Mixeur" />
+              <span><span><a href="#">Mixeur</a></span></span>
+            </li>
+            <li>
+              <input type="checkbox" name="" id="task6" value="Four" />
+              <span><span><a href="#">Four</a></span></span>
+            </li>
+          </ul>
         </div>
       </div>
+      </div>
+
       <!-- Drop Down 3 -->
-      <div class="container container__drop__down__menu container__ingredient">
-        <!-- Button -->
-        <button class="drop__down__button">
-          Ustensiles<span>&#x25BC;</span>
-        </button>
-        <!-- Drop Down -->
-        <div class="container container__drop__down__menu__content">
-          <!-- Search -->
-          <div class="container container__drop__down__menu__search">
-            <input type="text" name="ustensile" class="drop__down__search" placeholder="&times;" />
-          </div>
-          <!-- Link -->
-          <a href="#">Jus de citron</a>
-          <a href="#">Glaçon</a>
-          <a href="#">Tomates</a>
-        </div>
-      </div>
+    
       </div>
       <!-- Titre -->
       <div class="container container__nav__title"></div>

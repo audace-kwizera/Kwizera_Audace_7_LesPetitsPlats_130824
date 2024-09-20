@@ -100,41 +100,41 @@ console.log(
 );
 
 /*========================== Dropdown =============================*/
-let dropdown = document.querySelector(".dropdown__multiselect");
-let menu = document.querySelector(".dropdown__menu");
-let listContainer = document.querySelector(".dropdown__selectedList__container");
+document.querySelectorAll(".dropdown__multiselect").forEach(dropdown => {
+  let menu = dropdown.querySelector(".dropdown__menu");
+  let listContainer = dropdown.querySelector(".dropdown__selectedList__container");
+  let selectedItems = [];
 
-let selectedItems = [];
-
-dropdown.onclick = (event) => {
-  if (event.target.classList.contains("dropdown__multiselect") || event.target.classList.contains("dropdown__arrow")) {
-    dropdown.classList.toggle("show");
-  }
-};
-
-menu.addEventListener("click", (event) => {
-  event.preventDefault();
-  let target = event.target;
-  let li = target.closest("li");
-  if (li) {
-    let checkbox = li.querySelector("input[type='checkbox']");
-    let item = checkbox.value;
-
-    checkbox.checked = !checkbox.checked;
-
-    if (checkbox.checked) {
-      if (!selectedItems.includes(item)) {
-        selectedItems.push(item);
-        showSelectedItems(item);
-      }
-    } else {
-      selectedItems = selectedItems.filter((value) => value !== item);
-      removeSelectedItem(item);
+  dropdown.addEventListener("click", (event) => {
+    if (event.target.classList.contains("dropdown__multiselect") || event.target.classList.contains("dropdown__arrow")) {
+      dropdown.classList.toggle("show");
     }
-  }
+  });
+
+  menu.addEventListener("click", (event) => {
+    event.preventDefault();
+    let target = event.target;
+    let li = target.closest("li");
+    if (li) {
+      let checkbox = li.querySelector("input[type='checkbox']");
+      let item = checkbox.value;
+
+      checkbox.checked = !checkbox.checked;
+
+      if (checkbox.checked) {
+        if (!selectedItems.includes(item)) {
+          selectedItems.push(item);
+          showSelectedItems(item, listContainer, selectedItems, menu);
+        }
+      } else {
+        selectedItems = selectedItems.filter((value) => value !== item);
+        removeSelectedItem(item, listContainer);
+      }
+    }
+  });
 });
 
-function showSelectedItems(item) {
+function showSelectedItems(item, listContainer, selectedItems, menu) {
   let itemSpan = document.createElement("span");
   let crossIcon = document.createElement("i");
 
@@ -142,13 +142,13 @@ function showSelectedItems(item) {
   itemSpan.classList.add("selectedItem");
 
   crossIcon.classList.add("fa-solid", "fa-xmark");
-  crossIcon.onclick = deleteItem;
+  crossIcon.onclick = (event) => deleteItem(event, listContainer, selectedItems, menu);
 
   itemSpan.appendChild(crossIcon);
   listContainer.appendChild(itemSpan);
 }
 
-function removeSelectedItem(item) {
+function removeSelectedItem(item, listContainer) {
   let itemSpans = listContainer.getElementsByClassName("selectedItem");
   for (let i = 0; i < itemSpans.length; i++) {
     if (itemSpans[i].textContent.replace('×', '').trim() === item) {
@@ -158,7 +158,7 @@ function removeSelectedItem(item) {
   }
 }
 
-function deleteItem(event) {
+function deleteItem(event, listContainer, selectedItems, menu) {
   event.stopPropagation();
   let itemSpan = event.currentTarget.parentElement;
   let item = itemSpan.textContent.replace('×', '').trim();
@@ -178,3 +178,4 @@ function deleteItem(event) {
     checkbox.checked = false;
   }
 }
+
