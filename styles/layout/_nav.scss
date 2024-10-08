@@ -2,6 +2,23 @@
 @import "../utils/mixins";
 @import "../utils/variables";
 
-.container__nav {
-  display: flex;
+.container {
+  &__nav {
+    display: flex;
+    padding: 1rem 2rem;
+    width: 100%;
+    justify-content: space-between;
+    &__menu {
+      font-size: 12px;
+      width: 50%;
+      align-self: center;
+    }
+    &__block {
+      display: flex;
+      width: 50%;
+    }
+    &__subtitle {
+      align-self: center;
+    }
+  }
 }

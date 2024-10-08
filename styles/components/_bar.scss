@@ -1,3 +1,48 @@
-@import '../utils/functions';
-@import '../utils/mixins';
-@import '../utils/variables';
+@import "../utils/functions";
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.container {
+  &__searchbar {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    &__input {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      height: 2.6rem;
+      align-items: center;
+      background: $background__color__second;
+      width: 80%;
+      justify-content: center;
+      border-radius: 13px;
+    }
+  }
+}
+
+.cover {
+  &__searchbar {
+    height: 2.6rem;
+    width: 88%;
+    border: none;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  &__loupe {
+    height: 2.6rem;
+    width: 6.5%;
+    align-content: center;
+    color: $background__color__second;
+    background-color: $background__color__second;
+    border-radius: 7px;
+    i {
+      background: $background__color__fourth;
+      height: 2rem;
+      border-radius: 7px;
+      width: 2rem;
+      padding: 0.5rem;
+    }
+  }
+}

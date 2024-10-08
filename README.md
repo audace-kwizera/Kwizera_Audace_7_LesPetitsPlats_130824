@@ -29,3 +29,7 @@ En tant qu'user quand je clique sur un ingredient qui est dans la liste d'ingred
 
 ///////////////////////////////////
 - terminer les dropdown 
+
+-> faire que lorsque on appui sur tout le bouton la dropdowns'ouvre
+-> supprimer transition et animation
+-> au clic sur recherche regenerer la liste et ecouter ce qu'on ecrit dans la barre de recherche et on affiche slon ce qu'on a ecrit a partir de 3 lettres voir dans les specs

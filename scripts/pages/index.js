@@ -99,6 +99,7 @@ console.log(
   filterByUstensil([searchUstensil, cleanUstensils[4]])
 );
 
+// Funtion pour la dropdown ingredient
 function initDropdownIngredient() {
   const ulElement = document.getElementById("ingredient-list");
   ulElement.innerHTML = '';
@@ -109,6 +110,30 @@ function initDropdownIngredient() {
   });
 }
 initDropdownIngredient();
+
+// Funtion pour la dropdown appareil
+function initDropdownAppliance() {
+  const ulElement = document.getElementById("appliance-list");
+  ulElement.innerHTML = '';
+  cleanAppliance.forEach(function (appliance) {
+    const liElement = document.createElement("li");
+    liElement.textContent = appliance;
+    ulElement.append(liElement); 
+  });
+}
+initDropdownAppliance();
+
+// Funtion pour la dropdown ustensil
+function initDropdownUstensil() {
+  const ulElement = document.getElementById("ustensil-list");
+  ulElement.innerHTML = '';
+  cleanUstensils.forEach(function (ustensil) {
+    const liElement = document.createElement("li");
+    liElement.textContent = ustensil;
+    ulElement.append(liElement); 
+  });
+}
+initDropdownUstensil();
 
 /*========================== Dropdown =============================*/
 document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {

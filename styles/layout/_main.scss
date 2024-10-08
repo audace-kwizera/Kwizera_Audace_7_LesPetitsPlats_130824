@@ -3,9 +3,21 @@
 @import "../utils/variables";
 
 .cover {
-  height: 50vh;
-  background-image: url("../../assets/cover/cover.jpeg"); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  height: 80vh;
+  background-image: url("../../assets/cover/cover.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &__content {
+    height: 80vh;
+    align-content: center;
+  }
+}
+
+.slogan {
+  color: #ffd15b;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 40px;
 }

@@ -4,13 +4,12 @@
 
 .dropdown {
   &__multiselect {
-    width: 280px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px $color__primary;
+    width: 50%;
+    border-radius: 10px;
     font-family: sans-serif;
     cursor: pointer;
     background: $background__color__second;
-    padding: 20px;
+    padding: 15px;
   }
   &__title {
     display: flex;
