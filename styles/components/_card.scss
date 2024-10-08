@@ -9,6 +9,16 @@
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;
       padding: 1rem 2rem;
+      &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        &__ingredient {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+      }
     }
   }
 }
@@ -25,7 +35,10 @@
     object-fit: cover;
   }
   &__description {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
     padding: 1rem;
-    height: 70%;
+    height: 650px;
   }
 }

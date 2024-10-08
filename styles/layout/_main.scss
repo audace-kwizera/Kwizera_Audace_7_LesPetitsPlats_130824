@@ -17,7 +17,15 @@
 .slogan {
   color: #ffd15b;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  line-height: 40px;
+  width: 60%;
+  line-height: 50px;
+}
+
+.container {
+  &__slogan {
+    display: flex;
+    justify-content: center;
+  }
 }

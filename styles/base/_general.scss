@@ -30,23 +30,55 @@ h2 {
 
 h3 {
   font-family: "Anton", Arial, Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: bold;
   font-size: 18px;
   line-height: 27px;
 }
 
 h4 {
   font-family: "Manrope", Arial, Helvetica, sans-serif;
-  font-weight: 700;
   font-size: 12px;
+  font-weight: 600;
   line-height: 16px;
 }
 
 p {
   font-family: "Manrope", Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-weight: lighter;
   font-size: 14px;
   line-height: 19px;
+}
+
+.container__main__card__description__ingredient__item p:nth-child(even) {
+  color: $color__second;
+}
+
+.container__main__card__description h4 {
+  color: $color__second;
+}
+
+.container__main__card__description p {
+  height: 175px;
+  overflow-y: scroll;
+  padding: 2px 5px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.container__main__card__description__ingredient p {
+  height: 1rem;
+}
+
+.container__main__card__description__ingredient {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  row-gap: 0rem;
+  height: 163px;
+  overflow-y: scroll;
+  padding: 2px 5px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .logo {
