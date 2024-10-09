@@ -102,7 +102,7 @@ console.log(
 // Funtion pour la dropdown ingredient
 function initDropdownIngredient() {
   const ulElement = document.getElementById("ingredient-list");
-  ulElement.innerHTML = '';
+  ulElement.innerHTML = "";
   cleanIngredients.forEach(function (ingredient) {
     const liElement = document.createElement("li");
     liElement.textContent = ingredient;
@@ -114,11 +114,11 @@ initDropdownIngredient();
 // Funtion pour la dropdown appareil
 function initDropdownAppliance() {
   const ulElement = document.getElementById("appliance-list");
-  ulElement.innerHTML = '';
+  ulElement.innerHTML = "";
   cleanAppliance.forEach(function (appliance) {
     const liElement = document.createElement("li");
     liElement.textContent = appliance;
-    ulElement.append(liElement); 
+    ulElement.append(liElement);
   });
 }
 initDropdownAppliance();
@@ -126,11 +126,11 @@ initDropdownAppliance();
 // Funtion pour la dropdown ustensil
 function initDropdownUstensil() {
   const ulElement = document.getElementById("ustensil-list");
-  ulElement.innerHTML = '';
+  ulElement.innerHTML = "";
   cleanUstensils.forEach(function (ustensil) {
     const liElement = document.createElement("li");
     liElement.textContent = ustensil;
-    ulElement.append(liElement); 
+    ulElement.append(liElement);
   });
 }
 initDropdownUstensil();
@@ -155,18 +155,13 @@ document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
   menu.addEventListener("click", (event) => {
     event.preventDefault();
     let target = event.target;
+    let item = target.textContent;
+    console.log("je dois filtrer sur ", item);
     let li = target.closest("li");
     if (li) {
-      let checkbox = li.querySelector("input[type='checkbox']");
-      let item = checkbox.value;
-
-      checkbox.checked = !checkbox.checked;
-
-      if (checkbox.checked) {
-        if (!selectedItems.includes(item)) {
-          selectedItems.push(item);
-          showSelectedItems(item, listContainer, selectedItems, menu);
-        }
+      if (!selectedItems.includes(item)) {
+        selectedItems.push(item);
+        showSelectedItems(item, listContainer, selectedItems, menu);
       } else {
         selectedItems = selectedItems.filter((value) => value !== item);
         removeSelectedItem(item, listContainer);
