@@ -285,7 +285,8 @@ p {
     align-self: center; }
   .container__nav__block {
     display: flex;
-    width: 30%; }
+    width: 30%;
+    gap: 2rem; }
   .container__nav__subtitle {
     align-self: center; }
 
