@@ -83,10 +83,10 @@ p {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    height: 2.6rem;
+    height: 2.8rem;
     align-items: center;
     background: #FFFFFF;
-    width: 55%;
+    width: 50%;
     justify-content: center;
     border-radius: 13px; }
 
@@ -182,7 +182,7 @@ p {
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/
 .dropdown__multiselect {
-  width: 50%;
+  width: 200px;
   border-radius: 10px;
   font-family: sans-serif;
   cursor: pointer;
@@ -194,6 +194,7 @@ p {
   justify-content: space-between; }
 .dropdown__menu {
   list-style-type: none;
+  width: 100%;
   border-radius: inherit;
   box-shadow: 0 2px 5px #FFFFFF;
   height: 0px;
@@ -209,6 +210,8 @@ p {
     transition: background 300ms ease-in;
     opacity: 0;
     transition: opacity 400ms ease-in-out; }
+  .dropdown__menu__searchbar__input__container input {
+    width: 100%; }
 .dropdown__selectedList__container {
   position: relative;
   width: 100%;
@@ -236,7 +239,8 @@ p {
 
 .show .dropdown__menu {
   height: 350px;
-  padding: 2rem 0; }
+  padding: 2rem 0;
+  width: 100%; }
   .show .dropdown__menu li {
     opacity: 1; }
 
@@ -281,7 +285,7 @@ p {
     align-self: center; }
   .container__nav__block {
     display: flex;
-    width: 50%; }
+    width: 30%; }
   .container__nav__subtitle {
     align-self: center; }
 
@@ -300,9 +304,9 @@ p {
 .slogan {
   color: #ffd15b;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  width: 60%;
+  width: 50%;
   line-height: 50px; }
 
 .container__slogan {
