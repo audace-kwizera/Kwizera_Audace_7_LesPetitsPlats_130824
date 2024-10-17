@@ -65,7 +65,7 @@ p {
   overflow-y: scroll;
   padding: 2px 5px;
   overflow: hidden;
-  overflow-y: scroll; }
+  /* overflow-y: scroll; */ }
 
 .logo {
   height: 50px;
@@ -188,6 +188,8 @@ p {
   cursor: pointer;
   background: #FFFFFF;
   padding: 15px; }
+  .dropdown__multiselect:hover {
+    background-color: #FFD15B; }
 .dropdown__title {
   display: flex;
   align-items: center;
@@ -195,13 +197,15 @@ p {
 .dropdown__menu {
   list-style-type: none;
   width: 100%;
-  border-radius: inherit;
+  border-radius: 0;
   box-shadow: 0 2px 5px #FFFFFF;
   height: 0px;
   transition: height 300ms ease-in-out;
   cursor: pointer;
   overflow-y: hidden;
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  position: absolute;
+  left: 0; }
   .dropdown__menu__items {
     overflow-y: scroll;
     height: 300px; }
@@ -210,8 +214,15 @@ p {
     transition: background 300ms ease-in;
     opacity: 0;
     transition: opacity 400ms ease-in-out; }
-  .dropdown__menu__searchbar__input__container input {
-    width: 100%; }
+    .dropdown__menu li:hover {
+      background-color: #FFD15B; }
+  .dropdown__menu__searchbar__input__container {
+    text-align: center;
+    border-radius: 0;
+    padding: 0.5rem 0 0 0; }
+    .dropdown__menu__searchbar__input__container input {
+      width: 80%;
+      font-size: 12px; }
 .dropdown__selectedList__container {
   position: relative;
   width: 100%;
@@ -239,7 +250,7 @@ p {
 
 .show .dropdown__menu {
   height: 350px;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   width: 100%; }
   .show .dropdown__menu li {
     opacity: 1; }

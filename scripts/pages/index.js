@@ -102,7 +102,7 @@ console.log(
 // Funtion pour la dropdown ingredient
 function initDropdownIngredient() {
   const ulElement = document.getElementById("ingredient-list");
-  ulElement.innerHTML = '';
+  ulElement.innerHTML = "";
   cleanIngredients.forEach(function (ingredient) {
     const liElement = document.createElement("li");
     liElement.textContent = ingredient;
@@ -114,11 +114,11 @@ initDropdownIngredient();
 // Funtion pour la dropdown appareil
 function initDropdownAppliance() {
   const ulElement = document.getElementById("appliance-list");
-  ulElement.innerHTML = '';
+  ulElement.innerHTML = "";
   cleanAppliance.forEach(function (appliance) {
     const liElement = document.createElement("li");
     liElement.textContent = appliance;
-    ulElement.append(liElement); 
+    ulElement.append(liElement);
   });
 }
 initDropdownAppliance();
@@ -126,11 +126,11 @@ initDropdownAppliance();
 // Funtion pour la dropdown ustensil
 function initDropdownUstensil() {
   const ulElement = document.getElementById("ustensil-list");
-  ulElement.innerHTML = '';
+  ulElement.innerHTML = "";
   cleanUstensils.forEach(function (ustensil) {
     const liElement = document.createElement("li");
     liElement.textContent = ustensil;
-    ulElement.append(liElement); 
+    ulElement.append(liElement);
   });
 }
 initDropdownUstensil();
@@ -146,7 +146,8 @@ document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
   dropdown.addEventListener("click", (event) => {
     if (
       event.target.classList.contains("dropdown__multiselect") ||
-      event.target.classList.contains("dropdown__arrow")
+      event.target.classList.contains("dropdown__title") ||
+      event.target.classList.contains("dropdown__title__label")
     ) {
       dropdown.classList.toggle("show");
     }
@@ -157,16 +158,10 @@ document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
     let target = event.target;
     let li = target.closest("li");
     if (li) {
-      let checkbox = li.querySelector("input[type='checkbox']");
-      let item = checkbox.value;
-
-      checkbox.checked = !checkbox.checked;
-
-      if (checkbox.checked) {
-        if (!selectedItems.includes(item)) {
-          selectedItems.push(item);
-          showSelectedItems(item, listContainer, selectedItems, menu);
-        }
+      let item = li.textContent.trim();
+      if (!selectedItems.includes(item)) {
+        selectedItems.push(item);
+        showSelectedItems(item, listContainer, selectedItems, menu);
       } else {
         selectedItems = selectedItems.filter((value) => value !== item);
         removeSelectedItem(item, listContainer);
