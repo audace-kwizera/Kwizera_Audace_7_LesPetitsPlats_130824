@@ -1,13 +1,21 @@
 console.log("recipes: ", recipes);
 const cardContainer = document.querySelector("#cardContainer");
-if (cardContainer) {
-  console.log("cardContainer", cardContainer);
-  cardContainer.innerHTML = "";
-  recipes.forEach(function (recipe) {
-    const template = generateCard(recipe);
-    cardContainer.insertAdjacentHTML("beforeend", template);
-  });
+const filterListFunction = {
+  "ingredient-list": filterByIngredient,
+  "appliance-list": filterByAppliance,
+  "ustensil-list": filterByUstensil,
+};
+function displayRecipes(recipes) {
+  if (cardContainer) {
+    console.log("cardContainer", cardContainer);
+    cardContainer.innerHTML = "";
+    recipes.forEach(function (recipe) {
+      const template = generateCard(recipe);
+      cardContainer.insertAdjacentHTML("beforeend", template);
+    });
+  }
 }
+displayRecipes(recipes);
 
 /*============================ FlatMap ===============================*/
 // Flat Map pour appliquer fonction ingredients à chaque élément en mettant à plat
@@ -63,6 +71,7 @@ function filterByIngredient(ingredientArray) {
     });
     return match;
   });
+  console.log("filterByIngredient", ingredientArray, results);
   return results;
 }
 
@@ -137,7 +146,7 @@ initDropdownUstensil();
 
 /*========================== Dropdown =============================*/
 document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
-  let menu = dropdown.querySelector(".dropdown__menu");
+  let menuItems = dropdown.querySelectorAll(".dropdown__menu li");
   let listContainer = dropdown.querySelector(
     ".dropdown__selectedList__container"
   );
@@ -153,65 +162,56 @@ document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
     }
   });
 
-  menu.addEventListener("click", (event) => {
-    event.preventDefault();
-    let target = event.target;
-    let li = target.closest("li");
-    if (li) {
-      let item = li.textContent.trim();
+  menuItems.forEach((li) => {
+    li.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("menu click l159", event.target);
+      let listItem = event.target;
+      
+      if (event.target.tagName !== 'LI') {
+        listItem = event.target.closest('li');
+      }
+      let item = listItem.textContent;
+     
+     
       if (!selectedItems.includes(item)) {
         selectedItems.push(item);
-        showSelectedItems(item, listContainer, selectedItems, menu);
+        showSelectedItems(listItem);
       } else {
         selectedItems = selectedItems.filter((value) => value !== item);
-        removeSelectedItem(item, listContainer);
+        removeSelectedItem(listItem);
       }
-    }
+      const listId = listItem.closest("ul").getAttribute("id");
+      const recipes = filterListFunction[listId](selectedItems);
+      displayRecipes(recipes);
+    });
   });
 });
 
-function showSelectedItems(item, listContainer, selectedItems, menu) {
+function showSelectedItems(item) {
   let itemSpan = document.createElement("span");
   let crossIcon = document.createElement("i");
 
-  itemSpan.innerHTML = item;
-  itemSpan.classList.add("selectedItem");
+  item.classList.add("selectedItem");
 
   crossIcon.classList.add("fa-solid", "fa-xmark");
-  crossIcon.onclick = (event) =>
-    deleteItem(event, listContainer, selectedItems, menu);
+ 
 
   itemSpan.appendChild(crossIcon);
-  listContainer.appendChild(itemSpan);
+  
+  item.append(itemSpan);
+
+  /**
+   * ajouter un tag avec un identifiant
+   */
 }
 
-function removeSelectedItem(item, listContainer) {
-  let itemSpans = listContainer.getElementsByClassName("selectedItem");
-  for (let i = 0; i < itemSpans.length; i++) {
-    if (itemSpans[i].textContent.replace("×", "").trim() === item) {
-      itemSpans[i].remove();
-      break;
-    }
-  }
-}
-
-function deleteItem(event, listContainer, selectedItems, menu) {
-  event.stopPropagation();
-  let itemSpan = event.currentTarget.parentElement;
-  let item = itemSpan.textContent.replace("×", "").trim();
-
-  selectedItems = selectedItems.filter((value) => value !== item);
-
-  itemSpan.classList.add("zoomOut");
-
-  setTimeout(() => {
-    itemSpan.remove();
-    itemSpan.classList.remove("zoomOut");
-  }, 390);
-
-  // Décocher la case correspondante
-  let checkbox = menu.querySelector(`input[value="${item}"]`);
-  if (checkbox) {
-    checkbox.checked = false;
-  }
+function removeSelectedItem(li) {
+  // supprimer la classe
+  // supprimer le span
+  li.classList.remove("selectedItem");
+  li.innerHTML = li.textContent;
+  /**
+   * supprimer le tag
+   */
 }
