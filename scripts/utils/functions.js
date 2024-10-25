@@ -134,14 +134,14 @@ function initDropdownUstensil(ustensils) {
   });
 }
 
-
 function displayRecipes(recipes) {
-    if (cardContainer) {
-      console.log("cardContainer", cardContainer);
-      cardContainer.innerHTML = "";
-      recipes.forEach(function (recipe) {
-        const template = generateCard(recipe);
-        cardContainer.insertAdjacentHTML("beforeend", template);
-      });
-    }
+  if (cardContainer) {
+    console.log("cardContainer", cardContainer);
+    cardContainer.innerHTML = "";
+    recipes.forEach(function (recipe) {
+      const template = generateCard(recipe);
+      cardContainer.insertAdjacentHTML("beforeend", template);
+    });
   }
+}
+

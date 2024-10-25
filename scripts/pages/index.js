@@ -59,6 +59,26 @@ document.getElementById('search-bar').addEventListener('input', function (e) {
   console.log('e', e);
   const str = e.target.value;
   console.log('recherche sur ', str);
-  
+  // Filtrer les recettes en fonction de l'entrée de l'utilisateur
+  const filterRecipes = recipes.filter(recipe => {
+    // Vérifier si le titre contient le texte de recherche
+    const titleMatch = recipe.name.includes(str);
 
+    // Vérifier si un ingredient contient le texte de recherche
+    const ingredientMatch = recipe.ingredients.some(ingredient =>
+      ingredient.ingredient.includes(str)  
+    );
+
+    // Vérifier si un appareil contient le texte de recherche
+    const applianceMatch = recipe.appliance.includes(str);
+
+    // Vérifier si un ustensil contient le texte de recherche
+    const ustensilMatch = recipe.ustensils.some(ustensil => 
+      ustensil.includes(str)   
+    );
+
+    // Return true or false selon les critères
+    return titleMatch || ingredientMatch || applianceMatch || ustensilMatch;
+  });
+  displayRecipes(filterRecipes);
 })
