@@ -57,10 +57,22 @@
                   <span class="dropdown__arrow">&blacktriangledown;</span>
                 </div>
               </div>
-              <div class="dropdown__menu">
-                <div>
-                  <input type="text" id="searchBar" placeholder="Rechercher..." />
+              <div class="dropdown__menu options">
+                <!-- Search -->
+                <div class="option-search-tags">
+                  <input type="text" class="search-tags" id="searchBar" placeholder="Rechercher..." />
+                  <button></button>
                 </div>
+                <!-- Tag -->
+                <div class="select-box">
+                  <input type="text" class="tags_input" name="tags" hidden />
+                  <div class="selected-options">
+                    <span class="tag"><span>Jus de citron</span><span class="remove-tag">&times;</span></span>
+                    <span class="tag"><span>Glaçon</span><span class="remove-tag">&times;</span></span>
+                    <span class="tag"><span>Tomates</span><span class="remove-tag">&times;</span></span>
+                  </div>
+                </div>
+                <!-- Item -->
                 <ul class="dropdown__menu__items" id="ingredient-list">
                   <li>
                     <a href="#">Jus de citron</a>
