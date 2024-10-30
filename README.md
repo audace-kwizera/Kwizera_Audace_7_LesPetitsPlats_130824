@@ -38,3 +38,9 @@ En tant qu'user quand je clique sur un ingredient qui est dans la liste d'ingred
 - enlever barre ingredient //
 - viser boutons en entier pour l'event //
 - corriger fonction checkbox (à supprimer) et corriger le filtre 
+
+////////////////////////////////////
+pour les tags faut faire un array
+=> Tag en de dessous des combos
+=> Recherche dans les combos tag en dessous de la barre
+=> faire fonction qui va boucler sur selected item et afficher les tag
