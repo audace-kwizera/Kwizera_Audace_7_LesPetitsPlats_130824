@@ -20,6 +20,9 @@ function showSelectedItems(item) {
 
   item.append(itemSpan);
 
+  //const firstLi = item.closest("ul").querySelector("li.first");
+  //firstLi.before(item);
+
   /**
    * ajouter un tag avec un identifiant
    */
@@ -102,14 +105,34 @@ function filterByUstensil(ustensilArray, recipes) {
 }
 
 // Funtion pour la dropdown ingredient
-function initDropdownIngredient(ingredients) {
+function initDropdownIngredient(ingredients, selectedIngredients, callback) {
   const ulElement = document.getElementById("ingredient-list");
   ulElement.innerHTML = "";
-  ingredients.forEach(function (ingredient) {
+  let filteredIngredients = ingredients;
+  if (selectedIngredients) {
+    selectedIngredients.forEach(function (ingredient, index) {
+      const liElement = document.createElement("li");
+      liElement.textContent = ingredient;
+      showSelectedItems(liElement);
+      ulElement.append(liElement);
+    });
+    filteredIngredients = ingredients.filter(
+      (i) => !selectedIngredients.includes(i)
+    );
+  }
+
+  filteredIngredients.forEach(function (ingredient, index) {
     const liElement = document.createElement("li");
+    if (index === 0) {
+      liElement.classList.add("first");
+    }
+
     liElement.textContent = ingredient;
     ulElement.append(liElement);
   });
+  if (callback) {
+    callback();
+  }
 }
 
 // Funtion pour la dropdown appareil
@@ -144,4 +167,3 @@ function displayRecipes(recipes) {
     });
   }
 }
-
