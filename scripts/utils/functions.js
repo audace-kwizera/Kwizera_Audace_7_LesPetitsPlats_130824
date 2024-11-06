@@ -110,7 +110,10 @@ function initDropdownIngredient(ingredients, selectedIngredients, callback) {
   ulElement.innerHTML = "";
   let filteredIngredients = ingredients;
   if (selectedIngredients) {
-    selectedIngredients.forEach(function (ingredient, index) {
+    let filteredSelectedIngredients = selectedIngredients.filter((ingredient) =>
+      ingredients.includes(ingredient)
+    );
+    filteredSelectedIngredients.forEach(function (ingredient, index) {
       const liElement = document.createElement("li");
       liElement.textContent = ingredient;
       showSelectedItems(liElement);
@@ -137,11 +140,16 @@ function initDropdownIngredient(ingredients, selectedIngredients, callback) {
 
 // Funtion pour la dropdown appareil
 function initDropdownAppliance(appliances, selectedAppliances, callback) {
+  
   const ulElement = document.getElementById("appliance-list");
   ulElement.innerHTML = "";
   let filteredAppliances = appliances;
+
   if (selectedAppliances) {
-    appliances.forEach(function (appliance, index) {
+    let filteredSelectedAppliances = selectedAppliances.filter((appliance) =>
+      appliances.includes(appliance)
+    );
+    filteredSelectedAppliances.forEach(function (appliance, index) {
       const liElement = document.createElement("li");
       liElement.textContent = appliance;
       showSelectedItems(liElement);
@@ -158,7 +166,7 @@ function initDropdownAppliance(appliances, selectedAppliances, callback) {
       liElement.classList.add("first");
     }
     liElement.textContent = appliance;
-    ulElement.append(liElement)
+    ulElement.append(liElement);
   });
   if (callback) {
     callback();
@@ -185,4 +193,14 @@ function displayRecipes(recipes) {
       cardContainer.insertAdjacentHTML("beforeend", template);
     });
   }
+}
+
+function displayTags(selectedItems) {
+  const tagsContainer = document.getElementById('selected__tags__container');
+  tagsContainer.innerHTML = '';
+  selectedItems.forEach((selectedItem) => {
+    const p = document.createElement('p');
+    p.innerHTML = selectedItem;
+    tagsContainer.append(p);
+  })
 }
