@@ -44,14 +44,14 @@ function dropdownEvents() {
           selectedItems.push(item);
           initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
           initDropdownAppliance(appliances, selectedItems, dropdownEvents);
-          //initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
+          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
           //showSelectedItems(listItem);
         } else {
           selectedItems = selectedItems.filter((value) => value !== item);
           //removeSelectedItem(listItem);
           initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
           initDropdownAppliance(appliances, selectedItems, dropdownEvents);
-          //initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
+          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
         }
 
         /**

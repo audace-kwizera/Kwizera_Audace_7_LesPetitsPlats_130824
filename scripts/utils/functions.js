@@ -140,7 +140,6 @@ function initDropdownIngredient(ingredients, selectedIngredients, callback) {
 
 // Funtion pour la dropdown appareil
 function initDropdownAppliance(appliances, selectedAppliances, callback) {
-  
   const ulElement = document.getElementById("appliance-list");
   ulElement.innerHTML = "";
   let filteredAppliances = appliances;
@@ -174,14 +173,36 @@ function initDropdownAppliance(appliances, selectedAppliances, callback) {
 }
 
 // Funtion pour la dropdown ustensil
-function initDropdownUstensil(ustensils) {
+function initDropdownUstensil(ustensils, selectedUstensils, callback) {
   const ulElement = document.getElementById("ustensil-list");
   ulElement.innerHTML = "";
-  ustensils.forEach(function (ustensil) {
+  let filteredUstensils = ustensils;
+
+  if (selectedUstensils) {
+    let filteredSelectedUstensils = selectedUstensils.filter((ustensil) => 
+      ustensils.includes(ustensil)
+    );
+    filteredSelectedUstensils.forEach(function (ustensil, index) {
+      const liElement = document.createElement("li");
+      liElement.textContent = ustensil;
+      showSelectedItems(liElement);
+      ulElement.append(liElement);
+    });
+    filteredUstensils = ustensils.filter(
+      (i) => !selectedUstensils.includes(i)
+    );
+  }
+  filteredUstensils.forEach(function (ustensil, index) {
     const liElement = document.createElement("li");
+    if (index === 0) {
+      liElement.classList.add("first");
+    }
     liElement.textContent = ustensil;
     ulElement.append(liElement);
   });
+  if (callback) {
+    callback();
+  }
 }
 
 function displayRecipes(recipes) {
