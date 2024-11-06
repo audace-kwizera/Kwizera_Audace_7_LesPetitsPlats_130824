@@ -5,7 +5,7 @@ const filterListFunction = {
   "appliance-list": filterByAppliance,
   "ustensil-list": filterByUstensil,
 };
-let selectedItems = []
+let selectedItems = [];
 
 displayRecipes(recipes);
 const { ingredients, appliances, ustensils } = initDropdownData(recipes);
@@ -13,20 +13,20 @@ initDropdownIngredient(ingredients);
 initDropdownAppliance(appliances);
 initDropdownUstensil(ustensils);
 /*========================== Dropdown =============================*/
+document.querySelectorAll(".dropdown__title").forEach((dropdown) => {
+  const clickEventListener = (event) => {
+    let dropdown = event.target;
+    if (!event.target.classList.contains("dropdown__multiselect")) {
+      dropdown = event.target.closest(".dropdown__multiselect");
+    }
+    dropdown.classList.toggle("show");
+  };
+  dropdown.removeEventListener("click", clickEventListener);
+  dropdown.addEventListener("click", clickEventListener);
+});
 function dropdownEvents() {
   document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
     let menuItems = dropdown.querySelectorAll(".dropdown__menu li");
-    
-
-    dropdown.addEventListener("click", (event) => {
-      if (
-        event.target.classList.contains("dropdown__multiselect") ||
-        event.target.classList.contains("dropdown__title") ||
-        event.target.classList.contains("dropdown__title__label")
-      ) {
-        dropdown.classList.toggle("show");
-      }
-    });
 
     menuItems.forEach((li) => {
       li.addEventListener("click", (event) => {
@@ -40,20 +40,24 @@ function dropdownEvents() {
           listItem = event.target.closest("li");
         }
         let item = listItem.textContent;
-
         if (!selectedItems.includes(item)) {
           selectedItems.push(item);
           initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
           initDropdownAppliance(appliances, selectedItems, dropdownEvents);
-          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
+          //initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
           //showSelectedItems(listItem);
         } else {
           selectedItems = selectedItems.filter((value) => value !== item);
           //removeSelectedItem(listItem);
           initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
           initDropdownAppliance(appliances, selectedItems, dropdownEvents);
-          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
+          //initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
         }
+
+        /**
+         * mise en place des tags
+         */
+        displayTags(selectedItems);
 
         const filteredRecipes = filterListFunction[listId](
           selectedItems,
