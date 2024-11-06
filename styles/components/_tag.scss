@@ -1,0 +1,17 @@
+.selected__tag {
+    display: inline-block;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+  }
+  
+  .selected__tag .fa-times {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  #selected__tags__container {
+    margin-bottom: 20px;
+  }
+  

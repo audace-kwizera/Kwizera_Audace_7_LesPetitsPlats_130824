@@ -44,11 +44,15 @@ function dropdownEvents() {
         if (!selectedItems.includes(item)) {
           selectedItems.push(item);
           initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
+          initDropdownAppliance(appliances, selectedItems, dropdownEvents);
+          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
           //showSelectedItems(listItem);
         } else {
           selectedItems = selectedItems.filter((value) => value !== item);
           //removeSelectedItem(listItem);
           initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
+          initDropdownAppliance(appliances, selectedItems, dropdownEvents);
+          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
         }
 
         const filteredRecipes = filterListFunction[listId](

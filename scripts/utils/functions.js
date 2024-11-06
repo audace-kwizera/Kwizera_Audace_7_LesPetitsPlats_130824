@@ -136,14 +136,33 @@ function initDropdownIngredient(ingredients, selectedIngredients, callback) {
 }
 
 // Funtion pour la dropdown appareil
-function initDropdownAppliance(appliances) {
+function initDropdownAppliance(appliances, selectedAppliances, callback) {
   const ulElement = document.getElementById("appliance-list");
   ulElement.innerHTML = "";
-  appliances.forEach(function (appliance) {
+  let filteredAppliances = appliances;
+  if (selectedAppliances) {
+    appliances.forEach(function (appliance, index) {
+      const liElement = document.createElement("li");
+      liElement.textContent = appliance;
+      showSelectedItems(liElement);
+      ulElement.append(liElement);
+    });
+    filteredAppliances = appliances.filter(
+      (i) => !selectedAppliances.includes(i)
+    );
+  }
+
+  filteredAppliances.forEach(function (appliance, index) {
     const liElement = document.createElement("li");
+    if (index === 0) {
+      liElement.classList.add("first");
+    }
     liElement.textContent = appliance;
-    ulElement.append(liElement);
+    ulElement.append(liElement)
   });
+  if (callback) {
+    callback();
+  }
 }
 
 // Funtion pour la dropdown ustensil

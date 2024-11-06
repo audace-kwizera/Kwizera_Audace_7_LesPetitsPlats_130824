@@ -112,6 +112,12 @@
   }
 }
 
+li.selectedItem {
+  background: yellow;
+  display: flex;
+  justify-content: space-between;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
