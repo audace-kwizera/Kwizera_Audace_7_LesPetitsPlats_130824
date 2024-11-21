@@ -223,6 +223,5 @@ function displayTags(selectedItems) {
     const p = document.createElement('p');
     p.innerHTML = selectedItem;
     tagsContainer.append(p);
-    const 
   })
 }

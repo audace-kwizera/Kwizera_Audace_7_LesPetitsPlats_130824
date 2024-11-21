@@ -260,10 +260,19 @@ li.selectedItem {
   display: flex;
   justify-content: space-between; }
 
-#selected__tags__container p {
-  background: #FFD15B;
+#selected__tags__container {
   display: flex;
-  justify-content: space-between; }
+  gap: 1rem;
+  flex-wrap: wrap; }
+  #selected__tags__container p {
+    background: #FFD15B;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    cursor: pointer;
+    padding: 15px; }
 
 ::-webkit-scrollbar {
   width: 5px; }
@@ -313,17 +322,23 @@ li.selectedItem {
   display: flex;
   padding: 1rem 2rem;
   width: 100%;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
   .container__nav__menu {
     font-size: 12px;
     width: 50%;
     align-self: center; }
   .container__nav__block {
     display: flex;
-    width: 30%;
-    gap: 2rem; }
+    width: 70%;
+    gap: 2rem;
+    padding: 1rem 0px; }
   .container__nav__subtitle {
-    align-self: center; }
+    align-self: center;
+    width: 30%;
+    text-align: end; }
+  .container__nav__tag {
+    width: 100%; }
 
 /*============================================== Background =============================================*/
 /*============================================== Color =============================================*/

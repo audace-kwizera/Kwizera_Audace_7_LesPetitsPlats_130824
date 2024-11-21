@@ -121,12 +121,20 @@ li.selectedItem {
 #selected {
   &__tags {
     &__container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
       p {
         background: $background__color__tertiairy;
         display: flex;
         justify-content: space-between;
+        width: 200px;
+        border-radius: 10px;
+        font-family: sans-serif;
+        cursor: pointer;
+        padding: 15px;
       }
-    } 
+    }
   }
 }
 
