@@ -223,6 +223,7 @@ function displayTags(selectedItems) {
     const p = document.createElement('p');
     let crossIcon = document.createElement("i");    
     p.innerHTML = selectedItem;
+    p.classList.add('tag__selection')
     crossIcon.classList.add("fa-solid", "fa-xmark");
     p.appendChild(crossIcon);
     tagsContainer.append(p);
@@ -232,8 +233,8 @@ function displayTags(selectedItems) {
 function removeTags(p) {
   // supprimer la classe
   // supprimer le span
-  p.getElementById.remove("selected__tags__container");
-  p.innerHTML = p.textContent;
+  li.classList.remove("selectedItem");
+  li.innerHTML = li.textContent;
   /**
    * supprimer le tag
    */
