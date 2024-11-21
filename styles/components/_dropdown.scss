@@ -118,6 +118,18 @@ li.selectedItem {
   justify-content: space-between;
 }
 
+#selected {
+  &__tags {
+    &__container {
+      p {
+        background: $background__color__tertiairy;
+        display: flex;
+        justify-content: space-between;
+      }
+    } 
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

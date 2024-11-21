@@ -260,6 +260,11 @@ li.selectedItem {
   display: flex;
   justify-content: space-between; }
 
+#selected__tags__container p {
+  background: #FFD15B;
+  display: flex;
+  justify-content: space-between; }
+
 ::-webkit-scrollbar {
   width: 5px; }
 
