@@ -221,7 +221,20 @@ function displayTags(selectedItems) {
   tagsContainer.innerHTML = '';
   selectedItems.forEach((selectedItem) => {
     const p = document.createElement('p');
+    let crossIcon = document.createElement("i");    
     p.innerHTML = selectedItem;
+    crossIcon.classList.add("fa-solid", "fa-xmark");
+    p.appendChild(crossIcon);
     tagsContainer.append(p);
   })
+}
+
+function removeTags(p) {
+  // supprimer la classe
+  // supprimer le span
+  p.getElementById.remove("selected__tags__container");
+  p.innerHTML = p.textContent;
+  /**
+   * supprimer le tag
+   */
 }
