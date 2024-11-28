@@ -24,6 +24,12 @@ document.querySelectorAll(".dropdown__title").forEach((dropdown) => {
   dropdown.removeEventListener("click", clickEventListener);
   dropdown.addEventListener("click", clickEventListener);
 });
+function updateDropdowns() {
+  initDropdownIngredient(ingredients, selectedItems);
+  initDropdownAppliance(appliances, selectedItems);
+  initDropdownUstensil(ustensils, selectedItems);
+  dropdownEvents();
+}
 function dropdownEvents() {
   document.querySelectorAll(".dropdown__multiselect").forEach((dropdown) => {
     let menuItems = dropdown.querySelectorAll(".dropdown__menu li");
@@ -42,16 +48,8 @@ function dropdownEvents() {
         let item = listItem.textContent;
         if (!selectedItems.includes(item)) {
           selectedItems.push(item);
-          initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
-          initDropdownAppliance(appliances, selectedItems, dropdownEvents);
-          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
-          //showSelectedItems(listItem);
         } else {
           selectedItems = selectedItems.filter((value) => value !== item);
-          //removeSelectedItem(listItem);
-          initDropdownIngredient(ingredients, selectedItems, dropdownEvents);
-          initDropdownAppliance(appliances, selectedItems, dropdownEvents);
-          initDropdownUstensil(ustensils, selectedItems, dropdownEvents);
         }
 
         /**
@@ -64,12 +62,14 @@ function dropdownEvents() {
           recipes
         );
         displayRecipes(filteredRecipes);
+        updateDropdowns();
+        //removeSelectedItem(listItem);
       });
     });
   });
 }
 
-dropdownEvents();
+updateDropdowns();
 /*=========================== searchbar =========================== */
 document.getElementById("search-bar").addEventListener("input", function (e) {
   e.preventDefault();
