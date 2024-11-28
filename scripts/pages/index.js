@@ -68,6 +68,7 @@ function dropdownEvents() {
     });
   });
 }
+
 dropdownEvents();
 /*=========================== searchbar =========================== */
 document.getElementById("search-bar").addEventListener("input", function (e) {

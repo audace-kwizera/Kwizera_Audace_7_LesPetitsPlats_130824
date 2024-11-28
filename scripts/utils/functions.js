@@ -205,6 +205,7 @@ function initDropdownUstensil(ustensils, selectedUstensils, callback) {
   }
 }
 
+// Funtion pour afficher les recettes
 function displayRecipes(recipes) {
   if (cardContainer) {
     console.log("cardContainer", cardContainer);
@@ -214,8 +215,12 @@ function displayRecipes(recipes) {
       cardContainer.insertAdjacentHTML("beforeend", template);
     });
   }
+  // Mise à jour du nombre de recettes
+  const recipeNumberElement = document.getElementById("recipe-number");
+  recipeNumberElement.textContent = recipes.length;
 }
 
+// Funtion pour afficher les tags
 function displayTags(selectedItems) {
   const tagsContainer = document.getElementById('selected__tags__container');
   tagsContainer.innerHTML = '';
@@ -230,6 +235,7 @@ function displayTags(selectedItems) {
   })
 }
 
+// Funtion pour supprimer les tags
 function removeTags(p) {
   // supprimer la classe
   // supprimer le span
