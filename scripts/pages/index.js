@@ -64,7 +64,7 @@ function dropdownEvents() {
           selectedItems,
           currentRecipes
         );
-        currentRecipes = filteredRecipes;
+        // currentRecipes = filteredRecipes;
         displayRecipes(filteredRecipes);
         updateDropdowns();
         //removeSelectedItem(listItem);
