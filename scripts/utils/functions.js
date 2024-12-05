@@ -27,22 +27,31 @@ function showSelectedItems(item) {
    * ajouter un tag avec un identifiant
    */
 }
-
+function capitalizeFirstLetter(val) {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
 function initDropdownData(recipes) {
   /*============================ FlatMap ===============================*/
   // Flat Map pour appliquer fonction ingredients à chaque élément en mettant à plat
   const ingredients = recipes.flatMap(function (recipe) {
     return recipe.ingredients.map(function (i) {
-      return i.ingredient;
+      const { ingredient } = i;
+
+      return capitalizeFirstLetter(ingredient);
     });
   });
 
   const appliance = recipes.flatMap(function (i) {
-    return i.appliance;
+    return capitalizeFirstLetter(i.appliance);
   });
 
   const ustensils = recipes.flatMap(function (recipe) {
-    return recipe.ustensils;
+    if (recipe.ustensils) {
+      return recipe.ustensils.flatMap((ustensil) =>
+        capitalizeFirstLetter(ustensil)
+      );
+    }
+    return "";
   });
 
   /*============================ Set ===============================*/
@@ -53,9 +62,11 @@ function initDropdownData(recipes) {
 
   /*============================ Sort ===============================*/
   // Classement des éléments par ordre alphabetique avec sort
-  cleanIngredients.sort();
-  cleanAppliance.sort();
-  cleanUstensils.sort();
+  cleanIngredients.sort((a, b) => a.localeCompare(b));
+  cleanAppliance.sort((a, b) => a.localeCompare(b));
+  cleanUstensils.sort((a, b) => a.localeCompare(b));
+
+  console.log("cleanIngredients", cleanIngredients);
 
   return {
     ingredients: cleanIngredients,
@@ -74,7 +85,7 @@ function filterByIngredient(ingredientArray, recipes) {
     let match = true;
     ingredientArray.forEach(function (ingredient) {
       const result = recipe.ingredients.find(function (i) {
-        return i.ingredient === ingredient;
+        return i.ingredient.toLowerCase() === ingredient.toLowerCase();
       });
       if (!result) {
         match = false;
@@ -88,17 +99,25 @@ function filterByIngredient(ingredientArray, recipes) {
 
 // Function pour filtrer les Appareils
 function filterByAppliance(applianceArray, recipes) {
+  console.log("filter by appliance", applianceArray, recipes);
+  
   const results = recipes.filter(function (recipe) {
-    return applianceArray.includes(recipe.appliance);
+    if (!recipe.appliance) {
+      return false;
+    }
+    return applianceArray.includes(capitalizeFirstLetter(recipe.appliance));
   });
+  console.log("filter by appliance results", results);
   return results;
 }
 
 // Function pour filtrer les Ustensils
 function filterByUstensil(ustensilArray, recipes) {
+  // need to be rewrite
+  console.log("filter by ustensil");
   const results = recipes.filter(function (recipe) {
     return ustensilArray.every(function (ustensil) {
-      return recipe.ustensils.includes(ustensil);
+      return recipe.ustensils.includes(ustensil, ustensil.toLowerCase());
     });
   });
   return results;
@@ -179,7 +198,7 @@ function initDropdownUstensil(ustensils, selectedUstensils, callback) {
   let filteredUstensils = ustensils;
 
   if (selectedUstensils) {
-    let filteredSelectedUstensils = selectedUstensils.filter((ustensil) => 
+    let filteredSelectedUstensils = selectedUstensils.filter((ustensil) =>
       ustensils.includes(ustensil)
     );
     filteredSelectedUstensils.forEach(function (ustensil, index) {
@@ -188,9 +207,7 @@ function initDropdownUstensil(ustensils, selectedUstensils, callback) {
       showSelectedItems(liElement);
       ulElement.append(liElement);
     });
-    filteredUstensils = ustensils.filter(
-      (i) => !selectedUstensils.includes(i)
-    );
+    filteredUstensils = ustensils.filter((i) => !selectedUstensils.includes(i));
   }
   filteredUstensils.forEach(function (ustensil, index) {
     const liElement = document.createElement("li");
@@ -222,17 +239,17 @@ function displayRecipes(recipes) {
 
 // Funtion pour afficher les tags
 function displayTags(selectedItems) {
-  const tagsContainer = document.getElementById('selected__tags__container');
-  tagsContainer.innerHTML = '';
+  const tagsContainer = document.getElementById("selected__tags__container");
+  tagsContainer.innerHTML = "";
   selectedItems.forEach((selectedItem) => {
-    const p = document.createElement('p');
-    let crossIcon = document.createElement("i");    
+    const p = document.createElement("p");
+    let crossIcon = document.createElement("i");
     p.innerHTML = selectedItem;
-    p.classList.add('tag__selection')
+    p.classList.add("tag__selection");
     crossIcon.classList.add("fa-solid", "fa-xmark");
     p.appendChild(crossIcon);
     tagsContainer.append(p);
-  })
+  });
 }
 
 // Funtion pour supprimer les tags
