@@ -200,9 +200,10 @@ p {
   border-radius: 0;
   box-shadow: 0 2px 5px #FFFFFF;
   height: 0px;
-  transition: height 300ms ease-in-out;
+  display: none;
+  /*transition: height 300ms ease-in-out;*/
   cursor: pointer;
-  overflow-y: hidden;
+  overflow: hidden;
   background: #FFFFFF;
   position: absolute;
   left: 0; }
@@ -251,7 +252,10 @@ p {
 .show .dropdown__menu {
   height: 350px;
   padding: 0.5rem 0;
-  width: 100%; }
+  width: 100%; 
+  top: 40px;
+  display: block;
+}
   .show .dropdown__menu li {
     opacity: 1; }
 
