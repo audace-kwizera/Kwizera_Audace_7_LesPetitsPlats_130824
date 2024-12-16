@@ -1,4 +1,3 @@
-console.log("recipes: ", recipes);
 const cardContainer = document.querySelector("#cardContainer");
 const filterListFunction = {
   "ingredient-list": filterByIngredient,
@@ -46,65 +45,93 @@ function dropdownEvents() {
           listItem = event.target.closest("li");
         }
         let item = listItem.textContent;
-        if (!selectedItems.includes(item)) {
-          selectedItems.push(item);
+        const findItem = selectedItems.find(
+          (selectedItemObj) => item === selectedItemObj.item
+        );
+        // il ne peut que y avoir un seul filtre appliance...
+        const findApplianceFilterIndex = selectedItems.findIndex(
+          (selectedItem) => selectedItem.listId === "appliance-list"
+        );
+        if (
+          findApplianceFilterIndex > -1 &&
+          listId === "appliance-list" &&
+          !findItem
+        ) {
+          selectedItems[findApplianceFilterIndex].item = item;
+        } else if (!findItem) {
+          selectedItems.push({ item, listId });
+          const filteredRecipes = filterListFunction[listId](
+            selectedItems,
+            currentRecipes
+          );
+          currentRecipes = filteredRecipes;
+          displayRecipes(filteredRecipes);
         } else {
-          selectedItems = selectedItems.filter((value) => value !== item);
-          // refaire une recherche
-          // refaire une recherche sur le texte si te texte existe
-          
+          selectedItems = selectedItems.filter(
+            (selectedItemObj) => selectedItemObj.item !== item
+          );
+          // refaire une recherche complète
+          fullResearch();
         }
 
         /**
          * mise en place des tags
          */
-        displayTags(selectedItems);
+        displayTags();
 
-        const filteredRecipes = filterListFunction[listId](
-          selectedItems,
-          currentRecipes
-        );
-        // currentRecipes = filteredRecipes;
-        displayRecipes(filteredRecipes);
         updateDropdowns();
-        //removeSelectedItem(listItem);
       });
     });
   });
 }
 
-updateDropdowns();
-/*=========================== searchbar =========================== */
-document.getElementById("search-bar").addEventListener("input", function (e) {
-  e.preventDefault();
-  console.log("e", e);
-  const str = e.target.value;
-  if (str.length < 3) {
-    return;
+function fullResearch(str) {
+  let text = str || document.getElementById("search-bar").value;
+  let prefilteredRecipes = recipes;
+  if (text.length > 2) {
+    prefilteredRecipes = researchByTxt(text);
   }
-  console.log("recherche sur ", str);
+  const filteredRecipes = filterByIngredient(selectedItems, prefilteredRecipes);
+  const filteredRecipes2 = filterByAppliance(selectedItems, filteredRecipes);
+  const filteredRecipes3 = filterByUstensil(selectedItems, filteredRecipes2);
+  displayRecipes(filteredRecipes3);
+  currentRecipes = filteredRecipes3;
+}
+
+function researchByTxt(str) {
+  let text = str.toLowerCase();
   // Filtrer les recettes en fonction de l'entrée de l'utilisateur
   const filteredRecipes = recipes.filter((recipe) => {
     // Vérifier si le titre contient le texte de recherche
-    const titleMatch = recipe.name.includes(str);
+    const titleMatch = recipe.name.toLowerCase().includes(text);
 
     // Vérifier si un ingredient contient le texte de recherche
     const ingredientMatch = recipe.ingredients.some((ingredient) =>
-      ingredient.ingredient.includes(str)
+      ingredient.ingredient.toLowerCase().includes(text)
     );
 
     // Vérifier si un appareil contient le texte de recherche
-    const applianceMatch = recipe.appliance.includes(str);
+    const applianceMatch = recipe.appliance.includes(text);
 
     // Vérifier si un ustensil contient le texte de recherche
     const ustensilMatch = recipe.ustensils.some((ustensil) =>
-      ustensil.includes(str)
+      ustensil.toLowerCase().includes(str)
     );
 
     // Return true or false selon les critères
     return titleMatch || ingredientMatch || applianceMatch || ustensilMatch;
   });
-
+  return filteredRecipes;
+}
+updateDropdowns();
+/*=========================== searchbar =========================== */
+document.getElementById("search-bar").addEventListener("input", function (e) {
+  e.preventDefault();
+  const str = e.target.value;
+  if (str.length < 3) {
+    return;
+  }
+  const filteredRecipes = researchByTxt(str);
   currentRecipes = filteredRecipes;
   const dropdownData = initDropdownData(filteredRecipes);
   ingredients = dropdownData.ingredients;
