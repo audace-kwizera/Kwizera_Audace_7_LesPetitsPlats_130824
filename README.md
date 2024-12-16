@@ -44,3 +44,9 @@ pour les tags faut faire un array
 => Tag en de dessous des combos
 => Recherche dans les combos tag en dessous de la barre
 => faire fonction qui va boucler sur selected item et afficher les tag
+
+
+/////appliances
+Si on choisi un on exclut l'autre
+voir les majuscules
+mettre le event sur les tags
