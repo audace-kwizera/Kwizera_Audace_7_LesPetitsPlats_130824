@@ -50,3 +50,14 @@ pour les tags faut faire un array
 Si on choisi un on exclut l'autre
 voir les majuscules
 mettre le event sur les tags
+
+
+/////////////////////////////////////
+Activer event listener sur croix sur le tag :
+
+l52 sur index.js => display tag => actualiser recherche à factoriser 
+modifier maniere de travailler avec les selected item
+
+
+////////////////////////////////////////////////////
+faire les petites recherches des dropdown
